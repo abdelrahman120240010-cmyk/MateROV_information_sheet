@@ -1,0 +1,36 @@
+[project]
+name = "information-sheet-problem"
+version = "0.1.0"
+description = "library for information-sheet-problem in task2.2"
+readme = "README.md"
+authors = [
+    { name = "omar-abdelgawad", email = "omar.abdelgawad@ejust.edu.eg" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "numpy",
+    "opencv-python",
+    "pyproj>=3",
+]
+
+[build-system]
+build-backend = "hatchling.build"
+requires = ["hatchling"]
+
+[dependency-groups]
+dev = [
+    "pytest==9.0.2",
+    "pytest-cov",
+    "ruff>=0.15.9",
+    "ty>=0.0.28",
+]
+
+[tool.pytest.ini_options]
+addopts = "--cov=information_sheet_problem" #include all packages under src directory
+testpaths = [
+    "tests",
+]
+
+[tool.ruff]
+lint.extend-select = ["I", "UP"]
+fix = true
